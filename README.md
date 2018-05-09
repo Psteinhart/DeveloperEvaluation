@@ -1,4 +1,4 @@
-# Calculation Appication
+# Calculation App;ication
 This simple web application takes a comma delimited list of numbers and returns the mean, median and mode of that list.
 
 To start this application navigate to the CalculationClient directory and run `npm install` then `ng serve --open`
