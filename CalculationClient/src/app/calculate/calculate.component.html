@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Input a list of numbers seperated by a comma (e.g "1,2,3,4...")</h1>
+<div class="ui raised segment">  
+  <form #f="ngForm"  
+        (ngSubmit)="onSubmit(model.numbers)">
+ 
+    <div class="form-group">
+      <label for="numberlist">List of numbers</label>
+      <input type="text" class="form-control" name = "numbers"  [(ngModel)] = "model.numbers"   #numbers = "ngModel" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>  
+  </form>
+  <br>
+  <a routerLink="/Home/"><button class="btn btn-default"> Go Home </button>
+  </a>  
+</div>
+
+  <div [hidden]="!submitted">
+  <h2>You submitted the following:</h2>
+  List of numbers : {{model.numbers}}
+  <div class="row">
+    <div class="col-xs-9  pull-left"> Mean :{{ data.mean }}</div>
+    <div class="col-xs-9  pull-left"> Median :{{ data.median }}</div>
+    <div class="col-xs-9  pull-left"> Mode :{{ data.mode }}</div>
+  </div>
+  <br>
+  <button class="btn btn-primary" (click)="submitted=false">Re-Calculate</button>
+  </div>
+</div>
